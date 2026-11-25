@@ -1,0 +1,24 @@
+# --- Patient data and derived datasets: NEVER commit these ---
+# PhysioNet data use agreements prohibit redistributing note text or
+# anything derived from it outside the credentialed access process.
+apixaban_dataset.csv
+apixaban_pilot_24.csv
+apixaban_yes_8.csv
+*_results.csv
+clean_pilot_results.csv
+baseline_ctx8k_results.csv
+v2_follow_question_results.csv
+v3_7b_results.csv
+v3_7b_yes8_results.csv
+scores_*.csv
+*.tmp
+
+# --- Local environment ---
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# --- Anything explicitly marked local-only ---
+*_local.csv
+*_backup.csv

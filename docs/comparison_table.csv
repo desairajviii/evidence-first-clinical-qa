@@ -1,0 +1,9 @@
+run,method,yes/no,numeric,not specified,answerable correct,answerable abstained,avg seconds
+"Baseline (3B, full note)",direct,2/8,0/8,8/8,2/16,13/16,10.1
+"Baseline (3B, full note)",evidence,0/8,0/8,7/8,0/16,15/16,11.3
+"v2 (3B, follow question)",direct,7/8,0/8,8/8,7/16,8/16,11.8
+"v2 (3B, follow question)",evidence,6/8,1/8,8/8,7/16,6/16,12.8
+"v3 (7B, follow question)",direct,8/8,5/8,8/8,13/16,3/16,29.2
+"v3 (7B, follow question)",evidence,8/8,2/8,8/8,10/16,2/16,32.0
+"v3 Yes-check (7B, 8 Yes cases)",direct,5/8,-,-,5/8,0/8,26.6
+"v3 Yes-check (7B, 8 Yes cases)",evidence,6/8,-,-,6/8,0/8,29.8
