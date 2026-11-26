@@ -1,4 +1,4 @@
-# CS 6120 Final Project — Group 7
+# CS 6120 Final Project - Group 7
 
 **Evaluating Evidence-First LLM Prompting for Clinical Trial Eligibility Screening**
 
