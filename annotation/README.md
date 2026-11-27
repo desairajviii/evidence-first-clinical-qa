@@ -34,6 +34,10 @@ Mean κ across categories: 0.85. The instruction categories (B2–B5) were appli
 - **A1 vs B1:** if the question is clear but doesn't say which value or when, it is A1 only; B1 only when a word or the task itself has more than one meaning.
 - **A2 vs B4:** demanding proof that something didn't happen is B4; it is A2 only if the prompt states the absence as a fact it builds on.
 
+These κ values were obtained with the **original codebook**, before adjudication. The two boundary rules were added afterwards and have not yet been re-tested on new items.
+
+**Annotator familiarity.** The prompts and design labels were drafted with AI assistance for this taxonomy, not collected from real users. Annotator 1 co-developed the codebook and received clarifications of codebook rules (not labels) on two calibration items. Annotator 2 wrote the project's literature review and read the codebook before labeling. Both knew the item set's composition from the protocol. Neither annotator viewed the design key before finishing the main round.
+
 Limitations: two annotators from the same team, 3–13 positive labels per category, and AI-drafted items reviewed by the team rather than real user prompts.
 
 ## Files
@@ -70,4 +74,4 @@ python scripts/agreement.py annotation/results/annotator1.xlsx annotation/result
     --key annotation/results/design_key.csv --out-dir annotation/results
 ```
 
-Add `--sheet Calibration` to check the calibration round. Categories with κ below 0.60 are flagged for revision, following McHugh (2012).
+Add `--sheet Calibration` to check the calibration round. Categories with κ below 0.60 are flagged for refinement. This is an exploratory threshold chosen for this study, informed by McHugh (2012), not a universal standard.
