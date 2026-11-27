@@ -1,0 +1,14 @@
+item_id,categories_disagree,primary_1,primary_2,notes_1,notes_2
+M09,B1,A1,A1,	“Lately” lacks a time window; “serious” is also ambiguous.,'Lately' is an undefined time window against an event from 1 year ago.
+M10,A2,A2,B4,	Assumes never diagnosed and demands a nonexistent confirming sentence.,Demands an exact sentence proving a negative that is simply absent from the note.
+M15,B1,A1,A1,No time window defined,'Recently' is undefined against an event 8 months prior.
+M22,A2,A2,B4,Non mention does not establish no history. Eidence is unavailable. A2 is the boundry decision,Demands evidence of an absence that was never documented.
+M25,A1,A1,B1,"Admission,discharge or another slection rule is unsatisfied","Two creatinine values exist (admission, discharge); the question doesn't specify which."
+M27,B2,A2,A2,Asserts unsupported low platelets; “surely” reinforces that expectation.,'Platelets were surely low' asserts an unsupported state the next question builds on (actual count is 210).
+M28,A2,A2,B4,Assumes established absence and demands a quotation proving it,Demands a quote proving an absence that was never documented.
+M34,A1,A1,B1,"	Does not specify which day, measurement, or summary value.",Glucose was recorded on multiple days; the question doesn't specify which value.
+M35,A1,A1,B1,Assessment purpose and criteria are missing; the task has several interpretations.,Fully open-ended task with no specific question; admits many readings.
+M37,A2,A2,B4,"	Assumes no ablation, forces a binary answer, and demands unavailable proof.",Bans uncertainty and demands proof of a negative at once; B4 wins tie-break.
+M41,A1,A1,B1,Does not specify historical versus recalculated CHADS2.,Two CHADS2 values exist (initial vs. recalculated); question doesn't specify which.
+M42,B1,A1,A1,	Anticoagulation status changes over time; the reference time is missing.,No time reference for 'is'; anticoagulation only starts at discharge.
+M44,A2,A2,B4,Assumes the condition was ruled out and demands a nonexistent supporting line.,Demands a quote ruling out a condition that is simply never mentioned.
