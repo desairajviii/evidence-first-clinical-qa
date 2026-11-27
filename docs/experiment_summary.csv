@@ -1,0 +1,8 @@
+condition,cases,accuracy,baseline_accuracy,abstained,baseline_abstained,changed,agreed_with_cue,gave_number,yes_f1,baseline_yes_f1
+B1,16,15/16,13/16,0/16,0/16,2/16,-,-,0.94,0.8
+B2,9,7/9,6/9,0/9,0/9,3/9,2/9,-,-,-
+B2_mirror,7,7/7,7/7,0/7,0/7,0/7,0/7,-,-,-
+B3,8,8/8,8/8,8/8,8/8,0/8,-,0/8,-,-
+B4,7,7/7,7/7,0/7,0/7,0/7,-,-,-,-
+B5 (implicit rule),32,17/32,26/32,23/32,11/32,12/32,-,-,0.71,0.8
+B5 (explicit rule),8,4/8,4/8,1/8,0/8,1/8,-,-,0.0,0.0
