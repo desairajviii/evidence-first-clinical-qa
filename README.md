@@ -17,6 +17,11 @@ running these scripts needs their own PhysioNet credentialing, CITI
 training, and signed Data Use Agreement, and must supply their own local
 copy of `apixaban_dataset.csv`.
 
+The annotation study in `annotation/` uses synthetic prompts paraphrased
+from the dataset's question templates, with one-line synthetic note
+summaries. It contains no patient data and can be rerun without PhysioNet
+access.
+
 ## Repo structure
 
 ```
@@ -30,12 +35,18 @@ copy of `apixaban_dataset.csv`.
 │   ├── check_default_context.py  # Diagnostic: compares default vs. explicit context window
 │   ├── check_questions.py        # Checks which question templates state their answer rule
 │   ├── score_results.py          # Scores a results file (correct / wrong / abstained)
-│   └── compare_runs.py           # Builds the cross-run comparison table
+│   ├── compare_runs.py           # Builds the cross-run comparison table
+│   └── agreement.py              # Inter-rater agreement (Cohen's kappa) for the taxonomy annotation study
 ├── docs/
 │   ├── Pilot_exp_procedure_description.pdf  # Step-by-step setup + run log
 │   ├── Pilot_results_summary.pdf            # Original pilot findings
 │   ├── findings_summary.md                  # v2/v3 follow-up findings
-│   └── comparison_table.csv                 # Aggregate scores across all runs (no patient data)
+│   ├── comparison_table.csv                 # Aggregate scores across all runs (no patient data)
+│   └── taxonomy_codebook.pdf                # Taxonomy definitions, annotation rules, agreement protocol
+├── annotation/           # Taxonomy annotation study (no patient data)
+│   ├── README.md                     # Study overview, results, how to rerun
+│   ├── annotation_sheet_template.xlsx
+│   └── results/                      # Both annotators' labels, design key, agreement output
 ├── .gitignore
 └── README.md
 ```
@@ -53,6 +64,8 @@ copy of `apixaban_dataset.csv`.
    the dataset's reference answers.
 5. **`compare_runs.py`**: aggregates all scored runs into one comparison
    table (`comparison_table.csv`).
+6. **`agreement.py`**: computes inter-rater agreement for the taxonomy
+   annotation study (see `annotation/README.md`).
 
 ## Run history (what changed each time, and why)
 
@@ -86,6 +99,29 @@ unsupported decisions, inadequate-evidence instructions.
 
 Categories requiring manual annotation (open, assigned 11/25): missing
 context, missing timing, unclear task format, incorrect assumptions.
+
+### Refined taxonomy and annotation study (added 11/27)
+
+The draft categories above were refined into seven categories in two
+dimensions, each defined by a single yes/no test. Full definitions and
+annotation rules: `docs/taxonomy_codebook.pdf`.
+
+| Code | Category | Dimension |
+|---|---|---|
+| A1 | Missing context (incl. time window) | Information provided |
+| A2 | Unsupported premise | Information provided |
+| B1 | Ambiguous request | Language & instructions |
+| B2 | Leading framing | Language & instructions |
+| B3 | Forced answer | Language & instructions |
+| B4 | Unsatisfiable evidence demand | Language & instructions |
+| B5 | Conflicting answer rule | Language & instructions |
+
+Two annotators independently labeled 46 synthetic prompts with these
+categories, after a 10-item calibration round. Mean Cohen's κ across
+categories was 0.85 (B3–B5 = 1.00, B2 = 0.91, B1 = 0.80, A2 = 0.70,
+A1 = 0.56). Disagreements clustered on two boundaries (A1 vs B1, A2 vs B4),
+which were settled in adjudication and added to the codebook as explicit
+rules. Details: `annotation/README.md`.
 
 ## Contributors
 
